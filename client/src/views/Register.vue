@@ -57,7 +57,7 @@
             >{{errors.first('phone')}}</div>
           </div>
 
-          <!-- role -->
+          <!-- role 
           <div class="form-group">
             <label for="role">Role</label>
             <input
@@ -71,7 +71,7 @@
               v-if="submitted && errors.has('role')"
               class="alert-danger"
             >{{errors.first('role')}}</div>
-          </div>
+          </div>-->
 
 
           <!-- email -->
@@ -146,11 +146,12 @@ export default {
   },
   mounted() {
     if (this.loggedIn) {
-      this.$router.push('/profile');
+      this.$router.push('/user');
     }
   },
   methods: {
     handleRegister() {
+      this.user.role = 'USER';
       this.message = '';
       this.submitted = true;
       this.$validator.validate().then(isValid => {

@@ -2,18 +2,12 @@
   <div id="app">
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <div class="navbar-nav mr-auto">
-        <li v-if="!currentUser" class="nav-item">
+        <li class="nav-item">
           <router-link to="/home" class="nav-link">Home</router-link>
-        </li>
-        <li v-if="!currentUser" class="nav-item">
-          <router-link to="/about" class="nav-link">About</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/booking" class="nav-link">Booking</router-link>
         </li>
-        <!-- <li v-if="showAdminBoard" class="nav-item">
-          <router-link to="/admin" class="nav-link">Admin Board</router-link>
-        </li> -->
       </div>
 
       <div v-if="!currentUser" class="navbar-nav ml-auto">
