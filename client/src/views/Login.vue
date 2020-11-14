@@ -74,11 +74,22 @@ export default {
   computed: {
     loggedIn() {
       return this.$store.state.auth.status.loggedIn;
+    },
+    currentUser() {
+      return this.$store.state.auth.user;
     }
   },
   created() {
-    if (this.loggedIn && this.user.role == "USER") {
-      this.$router.push('/profile');
+    if (this.loggedIn && this.currentUser.role == "USER") {
+      this.$router.push('/user');
+    }
+
+    if (this.loggedIn && this.currentUser.role == "ADMIN") {
+      this.$router.push('/admin');
+    }
+
+    if (this.loggedIn && this.currentUser.role == "STAFF") {
+      this.$router.push('/staff');
     }
   },
   methods: {
@@ -93,7 +104,16 @@ export default {
         if (this.user.ic && this.user.password) {
           this.$store.dispatch('auth/login', this.user).then(
             () => {
-              this.$router.push('/profile');
+              if(this.currentUser.role == "USER"){
+                this.$router.push('/user');
+              }
+              if (this.currentUser.role == "ADMIN"){
+                this.$router.push('/admin');
+              }
+              if (this.currentUser.role == "STAFF"){
+                this.$router.push('/staff');
+              }
+              
             },
             error => {
               this.loading = false;
