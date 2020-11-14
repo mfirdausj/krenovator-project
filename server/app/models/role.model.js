@@ -1,3 +1,4 @@
+//might remove later
 module.exports = (sequelize, Sequelize) => {
     const Role = sequelize.define("roles", {
       id: {
