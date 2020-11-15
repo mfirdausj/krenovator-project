@@ -6,7 +6,7 @@
           <router-link to="/home" class="nav-link">Home</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/booking" class="nav-link">Booking</router-link>
+          <router-link to="/appointment" class="nav-link">Appointment</router-link>
         </li>
       </div>
 

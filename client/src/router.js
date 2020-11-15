@@ -3,7 +3,7 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Login from './views/Login.vue';
 import Register from './views/Register.vue';
-import Booking from './views/Booking.vue';
+import Appointment from './components/Appointment.vue';
 
 Vue.use(Router);
 
@@ -20,8 +20,8 @@ export const router = new Router({
       component: Home
     },
     {
-      path: '/booking',
-      component: Booking
+      path: '/appointment',
+      component: Appointment
     },
     {
       path: '/login',
@@ -45,6 +45,21 @@ export const router = new Router({
       path: '/user',
       name: 'user',
       component: () => import('./views/User.vue')
+    },
+    {
+      path: "/appointment",
+      name: "appointment-list",
+      component: () => import("./components/AppointmentList")
+    },
+    {
+      path: "/appointment/:id",
+      name: "appointment",
+      component: () => import("./components/Appointment")
+    },
+    {
+      path: "/add",
+      name: "add",
+      component: () => import("./components/AddAppointment")
     }
   ]
 });

@@ -21,7 +21,6 @@
       <strong>Email:</strong>
       {{currentUser.email}}
     </p>
-    <strong>Authorities:</strong>
   </div>
 </template>
 
